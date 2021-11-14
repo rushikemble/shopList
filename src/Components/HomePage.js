@@ -16,14 +16,22 @@ const HomePage = () => {
 
   const [modalId, setModalId] = useState("");
 
+  const shopsSet = (shopItems, name) => {
+    const areaArr = [];
+    shopItems.forEach((element) => {
+      return areaArr.push(element.data[name]);
+    });
+    return areaArr;
+  };
+
   const areaDataForDropdown = () => {
-    const shopsSet = shops.map((item) => item.data.area);
-    return [...new Set(shopsSet)];
+    const areaSet = shopsSet(shops, "area");
+    return [...new Set(areaSet)];
   };
   const categoryDataForDropdown = () => {
-    const shopsSetcat = shops.map((item) => item.data.category);
+    const categorySet = shopsSet(shops, "category");
 
-    return [...new Set(shopsSetcat)];
+    return [...new Set(categorySet)];
   };
 
   const filterByArea = (areaName) => {

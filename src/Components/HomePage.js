@@ -17,10 +17,10 @@ const HomePage = () => {
   const [modalId, setModalId] = useState("");
 
   const areaDataForDropdown = () => {
-    return [...new Set(shops.forEach((item) => item.data.area))];
+    return [...new Set(shops?.map((item) => item.data.area))];
   };
   const categoryDataForDropdown = () => {
-    return [...new Set(shops.forEach((item) => item.data.category))];
+    return [...new Set(shops?.map((item) => item.data.category))];
   };
 
   const filterByArea = (areaName) => {

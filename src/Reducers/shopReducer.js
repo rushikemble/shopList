@@ -15,6 +15,7 @@ const shopReducer = (state = initialData, action) => {
         element.id === action.payload.id ? null : element
       );
       localStorage.setItem("shop", JSON.stringify(shopList));
+      ``;
       return state;
     }
 

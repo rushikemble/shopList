@@ -18,9 +18,10 @@ const HomePage = () => {
 
   const shopsSet = (shopItems, name) => {
     const areaArr = [];
-    shopItems.forEach((element) => {
-      return areaArr.push(element.data[name]);
-    });
+    for (let i = 0; i < shopItems.length; i++) {
+      areaArr.push(shopItems[i].data[name]);
+    }
+    console.log(areaArr);
     return areaArr;
   };
 

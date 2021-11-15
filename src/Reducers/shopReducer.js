@@ -1,4 +1,4 @@
-const initialData = JSON.parse(localStorage.getItem("shop")) || {};
+const initialData = JSON.parse(localStorage.getItem("shop")) || [];
 
 const shopReducer = (state = initialData, action) => {
   switch (action.type) {

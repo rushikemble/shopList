@@ -6,6 +6,7 @@ import ShopCard from "./ShopCard";
 import "./Component css/homePage.css";
 import FilterBar from "./FilterBar";
 import EditModal from "./EditModal";
+import ShopList from "./ShopList";
 
 const HomePage = () => {
   const shops = useSelector((state) => state?.shopReducer);
@@ -21,7 +22,6 @@ const HomePage = () => {
     for (let i = 0; i < shopItems.length; i++) {
       areaArr.push(shopItems[i].data[name]);
     }
-    console.log(areaArr);
     return areaArr;
   };
 
@@ -106,17 +106,11 @@ const HomePage = () => {
             />
           </div>
           <div className="shops-list-wrapper">
-            {filterData.map((elem) => {
-              return (
-                <ShopCard
-                  elem={elem}
-                  key={elem.id}
-                  status={elem.status}
-                  setModalIsOpen={setModalIsOpen}
-                  setModalId={setModalId}
-                />
-              );
-            })}
+            <ShopList
+              filterData={filterData}
+              setModalIsOpen={setModalIsOpen}
+              setModalId={setModalId}
+            />
           </div>
           <EditModal
             modalIsOpen={modalIsOpen}
